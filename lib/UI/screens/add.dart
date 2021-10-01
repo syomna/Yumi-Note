@@ -90,7 +90,7 @@ class Add extends StatelessWidget {
         screenName,
         style: Theme.of(context).textTheme.headline6,
       ),
-      backgroundColor: containerColor(cubit , isDarkAppBar: true),
+      backgroundColor: containerColor(cubit, isDarkAppBar: true),
       actions: [
         cubit.isDark
             ? SizedBox()
@@ -129,28 +129,35 @@ class Add extends StatelessWidget {
 
   Future buildShowModalBottomSheet(NoteCubit cubit, BuildContext context) {
     return showModalBottomSheet(
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(24), topRight: Radius.circular(24))),
+        clipBehavior: Clip.antiAliasWithSaveLayer,
         context: context,
         builder: (context) => BottomSheet(
             onClosing: () {
               Navigator.of(context).pop();
             },
             builder: (context) => Padding(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.fromLTRB(20, 30, 20, 30),
                   child: colorPickerBar(cubit, context),
                 )));
   }
 
   Widget colorPickerBar(NoteCubit cubit, context) {
-    return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+    return Wrap(
         children: kColorPickerList
             .map((e) => InkWell(
                   onTap: () {
                     cubit.changeBackgroundColor(e);
                     Navigator.of(context).pop();
                   },
-                  child: CircleAvatar(
-                    backgroundColor: Color(e),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CircleAvatar(
+                      radius: 24,
+                      backgroundColor: Color(e),
+                    ),
                   ),
                 ))
             .toList());

@@ -28,7 +28,7 @@ class NoteCubit extends Cubit<NoteStates> {
 
       notes = list.map((e) => Note.fromMap(e)).toList();
       notes.sort(
-          (a, b) => '${b.date} ${b.time}'.compareTo('${a.date} ${a.time}'));
+          (a, b) => '${b.editDate} ${b.editTime}'.compareTo('${a.editDate} ${a.editTime}'));
       emit(NoteGetNoteSuccessState());
     } catch (error) {
       emit(NoteGetNoteErrorState(error.toString()));

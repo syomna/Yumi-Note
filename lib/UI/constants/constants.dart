@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 
-Color kMyPrimaryColor = Color(0xFFfbffb3);
+Color kMyPrimaryColor = Color(0xFFffffff);
 Color kBackgroundColor = Color(0xFFED686E);
 Color kErrorColor = Colors.red;
 Color kDarkModeColor = Color(0xFF292826);
@@ -36,9 +36,14 @@ navigateAndRemove(context, widget) => Navigator.of(context).pushAndRemoveUntil(
     MaterialPageRoute(builder: (context) => widget), (route) => false);
 
 List<int> kColorPickerList = [
+  0xFFffffff,
   0xFFfbffb3,
+  0xFFcff9fc,
   0xFFffddc7,
   0xFFffbad1,
+  0xFFffc4bd,
   0xFFdbc7ff,
-  0xFFc9ffcc
+  0xFFc9ffcc,
+  0xFFb1b8de,
+  0xFFc9adc4
 ];

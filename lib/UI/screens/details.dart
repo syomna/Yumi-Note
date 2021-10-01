@@ -46,6 +46,7 @@ class NoteDetails extends StatelessWidget {
                     ? _displayDate(
                         date: note.editDate!,
                         time: note.editTime!,
+                        isEdit: true,
                         context: context)
                     : SizedBox(),
                 const SizedBox(
@@ -69,11 +70,12 @@ class NoteDetails extends StatelessWidget {
   Widget _displayDate(
       {required String date,
       required String time,
+      bool isEdit = false,
       required BuildContext context}) {
     return Align(
       alignment: Alignment.topRight,
       child: Text(
-        'Created : $time $date',
+        isEdit ? 'Edited : $time $date' : 'Created : $time $date',
         style: Theme.of(context).textTheme.bodyText1,
       ),
     );
@@ -92,8 +94,7 @@ class NoteDetails extends StatelessWidget {
         maxLines: 1,
         style: Theme.of(context).textTheme.headline6,
       ),
-      backgroundColor: cubit.isDark ? kAppBarDarkColor
-       : Color(note.color!),
+      backgroundColor: cubit.isDark ? kAppBarDarkColor : Color(note.color!),
       actions: [
         IconButton(
             icon: Icon(Icons.edit),

@@ -30,13 +30,13 @@ class NoteCard extends StatelessWidget {
                     color: cubit.isDark ? Colors.white : Colors.black),
               ),
               Text(
-                '${note.time}',
+                '${note.editTime}',
                 style: TextStyle(
                     height: 1,
                     color: cubit.isDark ? Colors.white : Colors.black),
               ),
               Text(
-                '${note.date}',
+                '${note.editDate}',
                 style: TextStyle(
                     color: cubit.isDark ? Colors.white : Colors.black),
               )
