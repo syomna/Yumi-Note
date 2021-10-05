@@ -1,16 +1,9 @@
-# simplenote
+# Yumi's Note app 
 
-A new Flutter project.
+Play store link : (https://play.google.com/store/apps/details?id=com.yumi.simplenote)
 
-## Getting Started
+![IMG-20211005-WA0004](https://user-images.githubusercontent.com/91206852/136107396-880311cf-d521-43e9-98b9-037d783b5079.jpg) 
 
-This project is a starting point for a Flutter application.
+![IMG-20211005-WA0003](https://user-images.githubusercontent.com/91206852/136107407-50795668-7037-4072-ac70-ccf04ef9cfcc.jpg)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![IMG-20211005-WA0006](https://user-images.githubusercontent.com/91206852/136107425-aea492c5-a07a-48b4-ab5f-ce274a9f96de.jpg)
