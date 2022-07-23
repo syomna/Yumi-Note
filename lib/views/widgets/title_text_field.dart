@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simplenote/UI/constants/constants.dart';
+import 'package:simplenote/views/constants/constants.dart';
 import 'dart:ui' as ui;
 
 class TitleTextField extends StatelessWidget {

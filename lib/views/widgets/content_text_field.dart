@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
-import 'package:simplenote/UI/constants/constants.dart';
+import 'package:simplenote/views/constants/constants.dart';
 
 class ContentTextField extends StatelessWidget {
   const ContentTextField({

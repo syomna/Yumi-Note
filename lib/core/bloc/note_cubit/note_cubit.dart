@@ -1,4 +1,3 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simplenote/core/bloc/note_states/note_states.dart';
 import 'package:simplenote/core/helper/cache_data.dart';
@@ -27,8 +26,8 @@ class NoteCubit extends Cubit<NoteStates> {
       List<Map<String, Object?>> list = await DatabaseHelper.loadAll();
 
       notes = list.map((e) => Note.fromMap(e)).toList();
-      notes.sort(
-          (a, b) => '${b.editDate} ${b.editTime}'.compareTo('${a.editDate} ${a.editTime}'));
+      notes.sort((a, b) => '${b.editDate} ${b.editTime}'
+          .compareTo('${a.editDate} ${a.editTime}'));
       emit(NoteGetNoteSuccessState());
     } catch (error) {
       emit(NoteGetNoteErrorState(error.toString()));
@@ -74,8 +73,17 @@ class NoteCubit extends Cubit<NoteStates> {
 
   searchNote(String value) async {
     try {
-      List<Map<String, Object?>> search = await DatabaseHelper.search(value);
-      filteredList = search.map((e) => Note.fromMap(e)).toList();
+      filteredList = notes
+          .where((element) =>
+              element.title!.contains(value) ||
+              element.content!.contains(value))
+          .toList();
+      // List<Map<String, Object?>> search = await DatabaseHelper.search(value);
+      // for (var note in search) {
+      //   filteredList.add(Note.fromMap(note));
+      // }
+      print('filteredList ${filteredList.length}');
+      // filteredList = search.map((e) => Note.fromMap(e)).toList();
       emit(NoteSearchSuccessState());
     } catch (error) {
       emit(NoteSearchErrorState(error.toString()));

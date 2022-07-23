@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:simplenote/UI/constants/constants.dart';
+import 'package:simplenote/views/constants/constants.dart';
 import 'package:simplenote/core/bloc/note_cubit/note_cubit.dart';
 import 'dart:ui' as ui;
 import 'package:simplenote/core/models/note_model.dart';

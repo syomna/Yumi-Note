@@ -20,6 +20,8 @@ class DatabaseHelper {
     return db;
   }
 
+  static String notesPath = 'notes';
+
   static Future<void> insertNote(Note note) async {
     final Database db = await database();
     await db.insert(
@@ -32,28 +34,27 @@ class DatabaseHelper {
 
   static Future<List<Map<String, Object?>>> loadAll() async {
     final Database db = await database();
-    return await db.query('notes');
+    return await db.query(notesPath);
   }
 
   static Future<List<Map<String, Object?>>> search(String? value) async {
     final Database db = await database();
-    return await db.query('notes',
-        where: 'title = ? OR content = ?', whereArgs: [value, value]);
+    return await db.query(notesPath, where: 'title = ?', whereArgs: [value]);
   }
 
   static Future<List<Map<String, Object?>>> getDetails(int id) async {
     final Database db = await database();
-    return await db.query('notes', where: 'id = ?', whereArgs: [id]);
+    return await db.query(notesPath, where: 'id = ?', whereArgs: [id]);
   }
 
   static Future<void> deleteNote(int? id) async {
     final Database db = await database();
-    await db.delete('notes', where: 'id = ?', whereArgs: [id]);
+    await db.delete(notesPath, where: 'id = ?', whereArgs: [id]);
   }
 
   static Future<void> updateNote(Note note) async {
     final Database db = await database();
     await db
-        .update('notes', note.toMap(), where: 'id = ?', whereArgs: [note.id]);
+        .update(notesPath, note.toMap(), where: 'id = ?', whereArgs: [note.id]);
   }
 }

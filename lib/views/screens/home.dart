@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:simplenote/UI/constants/constants.dart';
-import 'package:simplenote/UI/screens/add.dart';
-import 'package:simplenote/UI/screens/details.dart';
-import 'package:simplenote/UI/widgets/noteCard.dart';
+import 'package:simplenote/views/constants/constants.dart';
+import 'package:simplenote/views/screens/add.dart';
+import 'package:simplenote/views/screens/details.dart';
+import 'package:simplenote/views/widgets/noteCard.dart';
 import 'package:simplenote/core/bloc/note_cubit/note_cubit.dart';
 import 'package:simplenote/core/bloc/note_states/note_states.dart';
 import 'package:simplenote/core/models/note_model.dart';
@@ -27,7 +26,7 @@ class Home extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
               child: RefreshIndicator(
                 onRefresh: () async => await cubit.getNotes(),
-                child: cubit.notes.isEmpty 
+                child: cubit.notes.isEmpty
                     ? Center(
                         child: Text(
                           'No Notes',

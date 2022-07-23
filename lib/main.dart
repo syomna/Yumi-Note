@@ -1,9 +1,8 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:simplenote/UI/constants/constants.dart';
-import 'package:simplenote/UI/screens/home.dart';
-import 'package:simplenote/UI/style/style.dart';
+import 'package:simplenote/views/constants/constants.dart';
+import 'package:simplenote/views/screens/home.dart';
+import 'package:simplenote/views/style/style.dart';
 import 'package:simplenote/core/bloc/my_bloc_observer.dart';
 import 'package:simplenote/core/bloc/note_cubit/note_cubit.dart';
 import 'package:simplenote/core/bloc/note_states/note_states.dart';
