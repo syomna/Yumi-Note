@@ -1,6 +1,7 @@
 # Yumi's Note app 
 
 ## [On Play Store](https://play.google.com/store/apps/details?id=com.yumi.simplenote)
+## [On App Store](https://apps.apple.com/eg/app/yumis-note/id1636125411)
 
 ## Description
 
